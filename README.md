@@ -13,16 +13,17 @@ TechStack:
 - MySql 5.7
 
 ToDo:
-[X] Create FakeAccountData (Email, Inbox)
-[ ] Register to Instagram
-[ ] Like
-[ ] Follow/Unfollow (Unhealthy)
-[ ] Remember actions
-[ ] Multiple Workers (Scalable)
-[ ] Connect and use Database
-[ ] Get FakeData Collection
-[ ] Server Deploy
-[ ] Frontend
-[ ] Counter AntiBot Mechanics
-[ ] more...
 
+<ul>
+  <li>[X] Create FakeAccountData (Email, Inbox)</li>
+  <li>[ ] Register to Instagram</li>
+  <li>[ ] Like</li>
+  <li>[ ] Follow/Unfollow (Unhealthy)</li>
+  <li>[ ] Remember actions</li>
+  <li>[ ] Multiple Workers (Scalable)</li>
+  <li>[ ] Connect and use Database</li>
+  <li>[ ] Get FakeData Collection</li>
+  <li>[ ] Frontend</li>
+  <li>[ ] Counter AntiBot Mechanics</li>
+  <li>[ ] more...</li>
+</ul>
