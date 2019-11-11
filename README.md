@@ -1,9 +1,5 @@
-# InstaBot
-Instagram Bot - Educational Purpose Only!
-
-TrelloBoard: https://trello.com/b/7vpyNNxP
-
-Instagram Bot which generates FakeAccounts
+# FakeAccProvider
+Generates FakeEmailAcc - Educational Purpose Only!
 
 TechStack: 
 - Python
@@ -16,9 +12,8 @@ ToDo:
 
 <ul>
   <li>[X] Create FakeAccountData (Email, Inbox)</li>
-  <li>[ ] Register to Instagram</li>
+  <li>[ ] Register to Social Media</li>
   <li>[ ] Like</li>
-  <li>[ ] Follow/Unfollow (Unhealthy)</li>
   <li>[ ] Remember actions</li>
   <li>[ ] Multiple Workers (Scalable)</li>
   <li>[ ] Connect and use Database</li>
