@@ -13,7 +13,7 @@ ToDo:
 <ul>
   <li>[X] Create FakeAccountData (Email, Inbox)</li>
   <li>[ ] Register to Social Media</li>
-  <li>[ ] Like</li>
+  <li>[ ] Like Posts</li>
   <li>[ ] Remember actions</li>
   <li>[ ] Multiple Workers (Scalable)</li>
   <li>[ ] Connect and use Database</li>
