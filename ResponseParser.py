@@ -6,7 +6,6 @@
 import re
 from bs4 import BeautifulSoup as bso
 
-
 class ResponseParser():
 
     # Returns the data needed by a FakeMailAccount Object
