@@ -19,24 +19,6 @@ class DatabaseConnector:
                 # database="fake_account_db"
             )
 
-            # sql = "SELECT * FROM fake_account_db.fake_accounts"
-            # sql2 = "USE fake_account_db"
-            # sql3 = "INSERT INTO fake_account_db.fake_accounts (Name, Address, Inbox, Cookies) " \
-            #        "VALUES ('Max Mustermann', 'Musterstraße 1', 'SOMEHTMLCODEHERE', '23i2j3h2iu3rni2u3rni2j3rn')"
-            #
-            # cursor = mydb.cursor()
-            # cursor.execute(sql3)
-            #
-            # # commit nur mit insert
-            # mydb.commit()
-
-            # code für selects
-            # result = None
-            # for (Name, Address, Inbox, Cookies) in cursor:
-            #       result += Name, Address, Inbox, Cookies
-
-            # cursor.close()
-
             return db_connection
 
     def add_account_data(self, db_connection, account_data):
