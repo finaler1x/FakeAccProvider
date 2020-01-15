@@ -9,7 +9,7 @@
 
 from HttpClient import HttpClient 
 from ResponseParser import ResponseParser
-import InstaRegisterStep
+import TwitterRegisterStep
 import json
 
 
@@ -28,5 +28,6 @@ testFile = open("test.txt","w+")
 testFile.write(json.dumps(testAcc[1]))
 testFile.close()
 
-# Call InstaRegisterStep
-InstaRegisterStep.register(testAcc[0], "Bernd Bot", "BerndBot", "BerndBotPassword")
+# Call TwitterRegisterStep
+# TwitterRegisterStep.register(testAcc[0], "Bernd Bot", "BerndBot", "BerndBotPassword")
+TwitterRegisterStep.register(testAcc, "Bernd Bot", "BerndBotPassword")
