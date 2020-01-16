@@ -5,23 +5,16 @@
 import requests
 
 
-class HttpClient():
+class HttpClient:
         
-    def initialRequest(self, url):
+    def initial_request(self, url):
         # Initial request 
         response = requests.get(url)
 
         return response
 
-    def sendRequest(self, url, sessionCookies):
+    def send_request(self, url, session_cookies = None):
         # Send request
-        response = requests.get(url, cookies=sessionCookies)
+        response = requests.get(url, cookies=session_cookies)
 
         return response
-
-    
-        
-
-    
-
-    

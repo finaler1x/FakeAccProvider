@@ -4,29 +4,31 @@
 # The goal is to create a new account and confirm it
 # with the activation link sent by Instagramm
 
-
-
-
 from HttpClient import HttpClient 
 from ResponseParser import ResponseParser
 import InstaRegisterStep
 import json
 
 
-testUrl = "https://10minutemail.net/"
+test_url = "https://10minutemail.net/"
+fake_name_api_url = "https://uinames.com/api/?ext&region=united+states"
 
-testClient = HttpClient()
-testParser = ResponseParser()
+test_client = HttpClient()
+test_parser = ResponseParser()
 
-testResponse = testClient.initialRequest(testUrl)
+test_response = test_client.initial_request(test_url)
+testNameResponse = test_client.send_request(fake_name_api_url)
 
-# Get mail adress
-testAcc = testParser.getFakeAccData(testResponse)
+# Get mail address
+test_acc = test_parser.get_fake_acc_data(test_response)
+
+# Get fake name
+testNameData = test_parser.get_fake_name(testNameResponse)
 
 # Save sessionCookies to file for now
 testFile = open("test.txt","w+")
-testFile.write(json.dumps(testAcc[1]))
+testFile.write(json.dumps(test_acc[1]))
 testFile.close()
 
 # Call InstaRegisterStep
-InstaRegisterStep.register(testAcc[0], "Bernd Bot", "BerndBot", "BerndBotPassword")
+InstaRegisterStep.register(test_acc[0], "Bernd Bot", "BerndBot", "BerndBotPassword")
