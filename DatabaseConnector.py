@@ -22,15 +22,15 @@ class DatabaseConnector:
             return db_connection
 
     def add_account_data(self, db_connection, account_data):
-        sql = """INSERT INTO fake_account_db.fake_accounts (Name, Address, Inbox, Cookies) VALUES (%s, %s, %s, %s)"""
+        sql = """INSERT INTO fake_account_db.fake_accounts (Name, Address, Password, Created) VALUES (%s, %s, %s, %s)"""
 
         # Extract row data
         name = account_data.get("name")
         address = account_data.get("address")
-        inbox = account_data.get("inbox")
-        cookies = account_data.get("cookies")
+        password = account_data.get("password")
+        created = account_data.get("created")
 
-        values = (name, address, inbox, cookies)
+        values = (name, address, password, created)
 
         cursor = db_connection.cursor()
         cursor.execute(sql, values)

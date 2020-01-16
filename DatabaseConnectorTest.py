@@ -7,8 +7,8 @@ from DatabaseConnector import DatabaseConnector
 test_account_data = {
     "name": "Maxi Musti",
     "address": "Berlinerstr 1",
-    "inbox": "EVENMOREHTMLCODE",
-    "cookies": "3w4tv34nw435zw45nzw",
+    "password": "supersecurepw123",
+    "created": "4:20:2040",
 }
 
 # Test creating connection
