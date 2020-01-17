@@ -29,10 +29,10 @@ Vagrant.configure("2") do |config|
   # within the machine from a port on the host machine and only allow access
   # via 127.0.0.1 to disable public access
 
-  #internet
+  # internet
   config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
   
-  #mysql
+  # mysql
   config.vm.network "forwarded_port", guest: 3306, host: 3306
 
   # Create a private network, which allows host-only access to the machine
