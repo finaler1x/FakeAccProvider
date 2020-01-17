@@ -46,3 +46,16 @@ class ResponseParser():
                     trimmedLinks.append(extractedLink[0].strip("'"))
             return trimmedLinks
 
+
+# Get the validation code for twitter
+    def getTwitterCode(self, response):
+            beautifulContent = bso(response.content, "html.parser")
+            codes = beautifulContent.findAll("td", attrs = {"class":"h1 black","dir":"ltr"})
+            for code in codes:
+                    code = code.getText()
+                    if code.isnumeric():
+                        return code
+                    else:
+                        return -1
+                
+            
