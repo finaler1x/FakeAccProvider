@@ -6,14 +6,14 @@ import requests
 
 
 class HttpClient:
-        
+
     def initial_request(self, url):
         # Initial request 
         response = requests.get(url)
 
         return response
 
-    def send_request(self, url, session_cookies = None):
+    def send_request(self, url, session_cookies=None):
         # Send request
         response = requests.get(url, cookies=session_cookies)
 

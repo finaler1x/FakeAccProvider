@@ -2,10 +2,9 @@
 # requested data.
 # This parser is currently only able to handle responses 
 # from "https://10minutemail.net/".
-
+# 
 import re
 from bs4 import BeautifulSoup as bso
-import json
 
 
 class ResponseParser:
@@ -53,9 +52,20 @@ class ResponseParser:
         surname = response_data['surname']
         password = response_data['password']
 
-        name += ' ' + surname
+        name += surname
 
         return {
-            'name': name,
-            'password': password
+            "name": name,
+            "password": password
         }
+
+    # Get the validation code for twitter
+    def get_twitter_code(self, response):
+        beautiful_content = bso(response.content, "html.parser")
+        codes = beautiful_content.findAll("td", attrs={"class": "h1 black", "dir": "ltr"})
+        for code in codes:
+            code = code.getText()
+            if code.isnumeric():
+                return code
+            else:
+                return -1
