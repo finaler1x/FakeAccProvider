@@ -6,33 +6,33 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 import json
-from HttpClient import HttpClient 
-from ResponseParser import ResponseParser 
+from HttpClient import HttpClient
+from ResponseParser import ResponseParser
 
-def register(mailAccount, name, password ):
 
-    # Set up 
-    mailUrl = "https://10minutemail.net/"
-    httpClient = HttpClient()
-    httpParser = ResponseParser()
+def register(mail_account, name, password):
+    # Set up
+    mail_url = "https://10minutemail.net/"
+    http_client = HttpClient()
+    http_parser = ResponseParser()
 
     # Start the driver/browser and open Url
     driver = webdriver.Chrome()
     driver.implicitly_wait(30)
     driver.get("https://twitter.com/i/flow/signup")
-    
-    #Switch from phonenumber to email
+
+    # Switch from phone number to email
     driver.find_element_by_xpath("//div[@role = 'button']/span").click()
 
     # Name
-    inputField = driver.find_element_by_name("name")
-    inputField.clear()
-    inputField.send_keys(name)    
+    input_field = driver.find_element_by_name("name")
+    input_field.clear()
+    input_field.send_keys(name)
 
     # Mail
-    inputField = driver.find_element_by_name("email")
-    inputField.clear()
-    inputField.send_keys(mailAccount[0])
+    input_field = driver.find_element_by_name("email")
+    input_field.clear()
+    input_field.send_keys(mail_account[0])
     time.sleep(3)
 
     # Go to next page
@@ -56,27 +56,27 @@ def register(mailAccount, name, password ):
     button.click()
 
     # Get the verification code
-    links = httpParser.getInboxLinks(httpClient.sendRequest(mailUrl, mailAccount[1]))
+    links = http_parser.get_inbox_links(http_client.send_request(mail_url, mail_account[1]))
     while len(links) < 2:
-        links = httpParser.getInboxLinks(httpClient.sendRequest(mailUrl, mailAccount[1]))
+        links = http_parser.get_inbox_links(http_client.send_request(mail_url, mail_account[1]))
         time.sleep(10)
-       
-    code = httpParser.getTwitterCode(httpClient.sendRequest(mailUrl + links[0],mailAccount[1]))
-    
+
+    code = http_parser.get_twitter_code(http_client.send_request(mail_url + links[0], mail_account[1]))
+
     # Write the code
-    inputField = driver.find_element_by_name("verfication_code")
-    inputField.clear()
-    inputField.send_keys(code)
+    input_field = driver.find_element_by_name("verfication_code")
+    input_field.clear()
+    input_field.send_keys(code)
     time.sleep(3)
-    
+
     # Go to next page
     button = driver.find_element_by_xpath("//div[@role = 'button']/div/span/span")
     button.click()
 
     # Select a password
-    inputField = driver.find_element_by_name("password")
-    inputField.clear()
-    inputField.send_keys(password)
+    input_field = driver.find_element_by_name("password")
+    input_field.clear()
+    input_field.send_keys(password)
     time.sleep(3)
 
     # Go to next page
@@ -113,4 +113,3 @@ def register(mailAccount, name, password ):
     button = driver.find_element_by_xpath("//div[@aria-label = 'Close']")
     button.click()
     time.sleep(2)
-
