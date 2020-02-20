@@ -1,7 +1,8 @@
 # DatabaseConnectorTest
 # Test SSH and MySql-Connection
 
-from DatabaseConnector import DatabaseConnector
+# from DatabaseConnector import DatabaseConnector
+from Sql.DatabaseConnector import DatabaseConnector
 
 # test data
 test_account_data = {
