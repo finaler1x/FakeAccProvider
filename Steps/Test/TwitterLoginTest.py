@@ -1,6 +1,6 @@
 # Test for TwitterloginStep
 
-import TwitterLoginStep
+from Steps import TwitterLoginStep
 
 username = "user"
 password = "password"
