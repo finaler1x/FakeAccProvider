@@ -1,14 +1,14 @@
 # DatabaseConnectorTest
 # Test SSH and MySql-Connection
 
-from DatabaseConnector import DatabaseConnector
-
+from Sql.DatabaseConnector import DatabaseConnector
+import datetime
 # test data
 test_account_data = {
-    "name": "Maxi Musti",
-    "address": "Berlinerstr 1",
-    "password": "supersecurepw123",
-    "created": "4:20:2040",
+    "name": "bsinfo_fan",
+    "address": "",
+    "password": "supersecurepw",
+    "created": str(datetime.datetime.now()),
 }
 
 # Test creating connection
