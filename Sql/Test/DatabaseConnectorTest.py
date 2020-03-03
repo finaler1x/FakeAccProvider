@@ -3,6 +3,7 @@
 
 from Sql.DatabaseConnector import DatabaseConnector
 import datetime
+
 # test data
 test_account_data = {
     "name": "bsinfo_fan",
